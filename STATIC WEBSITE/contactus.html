@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+    /*NAVIGATION BAR SETTING*/
+
+    .navbar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    .navbar li {
+      float: left;
+    }
+
+    .navbar li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .navbar li a:hover {
+      background-color: #111;
+    }
+
+    .active {
+      background-color: #fece0c;
+    }
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      outline: none;
+      font-family: 'Josefin Sans', sans-serif;
+    }
+
+    body{
+      background: #fece0c;
+    }
+
+    .wrapper{
+      position: absolute;
+      top: 50%;
+      left: 20%;
+      transform: translate(-50%,-50%);
+      max-width: 350px;
+      width: 100%;
+      background: #fff;
+      padding: 25px;
+      border-radius: 5px;
+      box-shadow: 4px 4px 2px rgba(254,236,164,1); 
+    }
+
+    .wrapper h2{
+      text-align: center;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #332902;
+    }
+
+    .wrapper .input_field{
+      margin-bottom: 10px;
+    }
+
+    .wrapper .input_field input[type="text"],
+    .wrapper textarea{
+      border: 1px solid #e0e0e0;
+      width: 100%;
+      padding: 10px;
+    }
+
+    .wrapper textarea{
+      resize: none;
+      height: 80px;
+    }
+
+    .wrapper .btn input[type="button"]{
+      border: 0px;
+      margin-top: 15px;
+      padding: 10px;
+      text-align: center;
+      width: 100%;
+      background: #fece0c;
+      color: #332902;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-weight: bold;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
+    #error_message{
+      margin-bottom: 20px;
+      background: #fe8b8e;
+      padding: 0px;
+      text-align: center;
+      font-size: 14px;
+      transition: all 0.5s ease;
+    }
+
+    .data {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      max-width: 350px;
+      width: 100%;
+      background: #fff;
+      padding: 25px;
+      border-radius: 5px;
+      box-shadow: 4px 4px 2px rgba(254,236,164,1); 
+    }
+
+    .next{
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%,-50%);
+    max-width: 350px;
+    width: 500px;
+    height: 220px;
+    background: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 2px rgba(254,236,164,1);
+  }
+  #hide{
+
+      font-family: "Raleway", sans-serif;
+      background-color: white;
+      color: black;
+      border: 2px solid #e9ecef;
+      padding: 10px 26px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 13px;
+      margin: 4px 2px 10px;
+      width: 90px;
+      transition-duration: 0.5s;
+      cursor: pointer;
+      position: absolute;
+      bottom: 1px;
+      right: 230px;
+    }
+
+    #show{
+
+      font-family: "Raleway", sans-serif;
+      background-color: white;
+      color: black;
+      border: 2px solid #e9ecef;
+      padding: 10px 26px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 13px;
+      margin: 4px 2px 10px;
+      width: 90px;
+      transition-duration: 0.5s;
+      cursor: pointer;
+      position: absolute;
+      bottom: 1px;
+      right: 30px;
+    }
+
+    .output1{
+
+      color: black;
+    }
+
+    .output{
+
+      color: white;
+    }
+
+    
+  </style>
+</head>
+<body>
+
+  <!---NAVIGATION BAR--->
+
+  <div class="navbar">
+
+  <!---UNORDERED LIST--->
+
+  <ul>
+      <li><a href="Music.html">HOME</a></li>
+      <li><a href="#Spotify">SPOTIFY</a></li>
+      <li><a href="YoutubeMusic.html">YOUTUBE MUSIC</a></li>
+      <li><a href="SoundCloud.html">SOUND CLOUD</a></li>
+      <li><a href="SecondPage.html">ABOUT MUSIC</a></li>
+      <li><a class="active" href="#contactus">CONTACT</a></li>
+  </ul> 
+  </div>
+
+<div class="next" align="center">
+
+
+    <h3>Let us know what the next content should be</h3>
+    <hr>
+
+    <p>Click here to give us suggestions for next content.</p>
+
+    <button id="nextbutton" class="button" style="vertical-align:middle;margin-top: 10px; margin-bottom: 10px;" onclick="question()"><span><strong>CLICK HERE </strong></span></button>
+
+
+    <p id="ot" class="output1" align="center"></p>
+
+    <script>
+      function question() {
+        let suggest = prompt("Enter your suggestion: ",);
+        if (suggest != null) {
+        document.getElementById("ot").innerHTML = "Suggested Content: " + suggest ;
+         }
+       }  
+    </script>
+
+    <script>
+      function show(){
+        document.getElementById("ot").setAttribute("class", "output1"); 
+      }
+    </script>
+
+    <script>
+      function hide() {
+          document.getElementById("ot").setAttribute("class", "output"); 
+      }
+    </script>
+
+    <button id="show" style="margin-left: 71px" style="vertical-align:middle;" onclick="show()"><span><strong>SHOW </strong></span></button>
+    <button id="hide" style="margin-left: 71px" style="vertical-align:middle;" onclick="hide()"><span><strong>HIDE </strong></span></button>
+
+    <script>
+     var button= window.document.getElementById("hide");
+     button.addEventListener("click", hideafter,false);
+
+     function hideafter(event) {
+       window.alert(
+         "You have hide your suggestion")
+       return;
+     }
+    </script>
+
+    <script>
+       var button= window.document.getElementById("show");
+       button.addEventListener("click", showaafter,false);
+
+       function showaafter(event) {
+         window.alert(
+           "You have shown your suggestion")
+         return;
+       }
+    </script>
+
+</div>
+
+<div class="wrapper">
+  <h2>Register with us</h2>
+  <div id="error_message">
+     
+  </div>
+  <form action="" id="myform" onsubmit = "return validate();">
+    <div class="input_field">
+        <input type="text" placeholder="Name" id="name">
+    </div>
+    <div class="input_field">
+        <input type="text" placeholder="Phone" id="phone">
+    </div>
+    <div class="input_field">
+        <input type="text" placeholder="Email" id="email">
+    </div>
+    <div class="btn">
+        <input type="button" onclick="myFunction()" value="Submit">
+    </div>
+  </form>
+</div>
+
+
+<div class="data">
+
+  <h5>Submitted data :</h5>  
+ 
+<p id="data"></p>
+<br>
+<div id="remove"></div>
+
+<script type="text/javascript">
+
+    function myFunction(){ 
+     let data = "";  
+     let name = document.getElementById("name").value 
+     let phone = document.getElementById("phone").value 
+     let email = document.getElementById("email").value
+     
+     
+      
+    data = "Name : "+name+"<br/>Phone Number : "+phone+ "<br/>Email : "+email
+ 
+      document.getElementById("data").innerHTML = data  // display data to paragraph 
+
+      var tq = document.createElement('h2');
+      tq.innerText = "Thank you for registering with us";
+      document.getElementById("remove").appendChild(tq);
+
+
+          var style = document.createElement('style');
+          style.type = 'text/css';
+          style.innerHTML = '.buttonRemove{background-color: black;color: white;padding: 12px 20px;border: none;border-radius: 4px;cursor: pointer;margin-left: 410px;z-index: 800px';
+          document.head.appendChild(style);
+          button.className="buttonRemove";
+          document.getElementById("remove").appendChild(buttonRemove);
+    }
+
+    
+</script>
+</div>
+  
+<body>
+</html>
